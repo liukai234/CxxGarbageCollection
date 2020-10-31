@@ -1,10 +1,12 @@
-### C++ 跟踪收集器
-### CxxGarbageCollection
-    定期遍历它管理的内存空间，从若干根储存对象开始查找与之相关的存储对象，然后标记其余的没有关联的存储对象，最后回收这些没有关联的存储对象占用的内存空间。
+### C++ 跟踪收集器🌈
+1. 所有子类都应继承Object基类
+2. 
 ---
-
+### 类
+1. class MemeoryManager 单例模式 实现对内存空间的管理
+2. class Object 对象基类
+---
 ### 回收算法
-
-1. Mark 标记
-2. Clear 清除
-3. Compress 压缩
+1. MemoryManager::toMark() 标记
+2. MemoryManager::markClear() 清除
+3. MemeoryManager::Compress() 压缩

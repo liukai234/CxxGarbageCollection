@@ -30,9 +30,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="269b7bbb-3fdf-49ba-94c0-ca1953b3d650" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MemoryManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/MemoryManager.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MemoryManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/MemoryManager.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Object.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Object.cpp" afterDir="false" />
@@ -40,7 +38,6 @@
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/GarbageCollection.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/GarbageCollection.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/type_pointer.c" beforeDir="false" afterPath="$PROJECT_DIR$/type_pointer.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,15 +69,16 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="GarbageCollection" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="GarbageCollection" TARGET_NAME="GarbageCollection" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="GarbageCollection" RUN_TARGET_NAME="GarbageCollection">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GarbageCollection" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="GarbageCollection" TARGET_NAME="GarbageCollection" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="GarbageCollection" RUN_TARGET_NAME="GarbageCollection">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -103,7 +101,8 @@
       <workItem from="1603800410601" duration="3352000" />
       <workItem from="1604113084217" duration="11705000" />
       <workItem from="1604125503837" duration="712000" />
-      <workItem from="1604126367750" duration="13917000" />
+      <workItem from="1604126367750" duration="14192000" />
+      <workItem from="1604143625512" duration="10566000" />
     </task>
     <servers />
   </component>
@@ -136,38 +135,38 @@
       <screen x="0" y="30" width="1536" height="834" />
     </state>
     <state x="549" y="202" key="FileChooserDialogImpl/0.30.1536.834@0.30.1536.834" timestamp="1604114874769" />
-    <state width="723" height="239" key="GridCell.Tab.0.bottom" timestamp="1604139860857">
+    <state width="1493" height="307" key="GridCell.Tab.0.bottom" timestamp="1604156236570">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="723" height="239" key="GridCell.Tab.0.bottom/0.30.1536.834@0.30.1536.834" timestamp="1604139860857" />
-    <state width="723" height="239" key="GridCell.Tab.0.center" timestamp="1604139860857">
+    <state width="1493" height="307" key="GridCell.Tab.0.bottom/0.30.1536.834@0.30.1536.834" timestamp="1604156236570" />
+    <state width="1493" height="307" key="GridCell.Tab.0.center" timestamp="1604156236570">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="723" height="239" key="GridCell.Tab.0.center/0.30.1536.834@0.30.1536.834" timestamp="1604139860857" />
-    <state width="723" height="239" key="GridCell.Tab.0.left" timestamp="1604139860857">
+    <state width="1493" height="307" key="GridCell.Tab.0.center/0.30.1536.834@0.30.1536.834" timestamp="1604156236570" />
+    <state width="1493" height="307" key="GridCell.Tab.0.left" timestamp="1604156236570">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="723" height="239" key="GridCell.Tab.0.left/0.30.1536.834@0.30.1536.834" timestamp="1604139860857" />
-    <state width="723" height="239" key="GridCell.Tab.0.right" timestamp="1604139860857">
+    <state width="1493" height="307" key="GridCell.Tab.0.left/0.30.1536.834@0.30.1536.834" timestamp="1604156236570" />
+    <state width="1493" height="307" key="GridCell.Tab.0.right" timestamp="1604156236570">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="723" height="239" key="GridCell.Tab.0.right/0.30.1536.834@0.30.1536.834" timestamp="1604139860857" />
-    <state width="723" height="239" key="GridCell.Tab.1.bottom" timestamp="1604139860858">
+    <state width="1493" height="307" key="GridCell.Tab.0.right/0.30.1536.834@0.30.1536.834" timestamp="1604156236570" />
+    <state width="1493" height="239" key="GridCell.Tab.1.bottom" timestamp="1604155699128">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="723" height="239" key="GridCell.Tab.1.bottom/0.30.1536.834@0.30.1536.834" timestamp="1604139860858" />
-    <state width="723" height="239" key="GridCell.Tab.1.center" timestamp="1604139860857">
+    <state width="1493" height="239" key="GridCell.Tab.1.bottom/0.30.1536.834@0.30.1536.834" timestamp="1604155699128" />
+    <state width="1493" height="239" key="GridCell.Tab.1.center" timestamp="1604155699128">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="723" height="239" key="GridCell.Tab.1.center/0.30.1536.834@0.30.1536.834" timestamp="1604139860857" />
-    <state width="723" height="239" key="GridCell.Tab.1.left" timestamp="1604139860857">
+    <state width="1493" height="239" key="GridCell.Tab.1.center/0.30.1536.834@0.30.1536.834" timestamp="1604155699128" />
+    <state width="1493" height="239" key="GridCell.Tab.1.left" timestamp="1604155699128">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="723" height="239" key="GridCell.Tab.1.left/0.30.1536.834@0.30.1536.834" timestamp="1604139860857" />
-    <state width="723" height="239" key="GridCell.Tab.1.right" timestamp="1604139860857">
+    <state width="1493" height="239" key="GridCell.Tab.1.left/0.30.1536.834@0.30.1536.834" timestamp="1604155699128" />
+    <state width="1493" height="239" key="GridCell.Tab.1.right" timestamp="1604155699128">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="723" height="239" key="GridCell.Tab.1.right/0.30.1536.834@0.30.1536.834" timestamp="1604139860857" />
+    <state width="1493" height="239" key="GridCell.Tab.1.right/0.30.1536.834@0.30.1536.834" timestamp="1604155699128" />
     <state x="270" y="91" key="SettingsEditor" timestamp="1604126382184">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
@@ -184,6 +183,7 @@
         <watch expression="memorySize_" />
         <watch expression="memoryStruct_" language="ObjectiveC" />
         <watch expression="static_cast&lt;Object*&gt;(memoryStruct_.list[i])" />
+        <watch expression="memoryStruct_.listIndex" />
       </configuration>
     </watches-manager>
   </component>

@@ -1,6 +1,6 @@
 ### C++ 跟踪收集器🌈
 1. 所有子类都应继承Object基类
-2. 
+2. MemoryManager::memoryTrim()定时使主线程暂停，并进行内存整理
 ---
 ### 类
 1. class MemeoryManager 单例模式 实现对内存空间的管理

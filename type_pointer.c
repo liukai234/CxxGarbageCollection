@@ -3,7 +3,8 @@
 //
 
 #include <stdio.h>
-
+#ifndef TYPE_POINTER_C
+#define TYPE_POINTER_C
 /*
  * byte_pointer -> unsigned char *
  * 地址指针
@@ -21,3 +22,9 @@ void show_bytes(byte_pointer start, size_t len) {
     }
     printf("\n");
 }
+
+void show_pointer(void *x) {
+    show_bytes((byte_pointer) &x, sizeof(void *));
+}
+
+#endif

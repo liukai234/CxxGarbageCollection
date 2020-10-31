@@ -6,17 +6,19 @@
 // Object C llvm   编译优化自动增加 delete
 //
 
+#include <thread>
 #include "Object.h"
 void * Object::operator new(size_t size) {
 #ifdef DEBUG
-    dbg("operator new called");
+    std::cout << "Object operator new called\n";
 #endif
+
     return MemoryManager::getInstance()->operator new(size); // 调用ManageAllocate::operator new
 }
 
 void Object::operator delete(void *pointer) noexcept {
 #ifdef DEBUG
-    dbg("operator delete called");
+    std::cout << "Object operator delete called\n";
 #endif
     MemoryManager::getInstance()->operator delete(pointer);
 }
@@ -24,7 +26,7 @@ void Object::operator delete(void *pointer) noexcept {
 // TODO: [PROBLEM] deep copy 深拷贝
 Object& Object::operator=(Object &obj) {
 #ifdef DEBUG
-    dbg("operator= &obj");
+    std::cout << "operator= &obj\n";
 #endif
     // TODO: 对象被释放时减计数
     // 赋值时增减计数 ? 减 怎么判断减

@@ -8,25 +8,21 @@
 #include "MemoryManager.h"
 #include "Object.h"
 #include <string.h>
+#include <thread>
 
-#ifdef DEBUG
-#include "dbg.h"
-#endif
-
-
-class Add : public Object {
+class A : public Object {
 public:
-    explicit Add(int a, std::string name) : a_ {a} {
+    explicit A(int a, std::string name) : a_ {a} {
         setObjectName(name);
     }
-    explicit Add() {}
+    explicit A() {}
     int a() const { return a_; }
     
 private:
     int a_;
 };
 
-class B : public Add {
+class B : public A {
 public:
     explicit B(int a, std::string name) : a_ {a} {
         setObjectName(name);
@@ -37,24 +33,31 @@ private:
 
 int main() {
 
-    Add *add1 = new Add(5, "add1");
-    delete(add1);
-    Add *add2 = new Add(2, "add2");
-    B *b = new B(5, "b");
+    A *a1 = new A(5, "a1");
+
+//    std::thread t(MemoryManager::markClear);
+//    t.join();
+    delete(a1);
+    a1 = nullptr;
+    MemoryManager::markClear();
+    A *a2 = new A(2, "a2");
+
+    B *b1 = new B(5, "b1");
     B *b2 = new B(2, "b2");
+    delete(b1);
+    b1 = nullptr;
+    MemoryManager::markClear();
 
-    *b2 = *b;
-    *add2 = *add1;
-//    MemoryManager::getAllObjPointer();
+//    *b2 = *b1;
+//    *a2 = *a1;
+////    MemoryManager::getAllObjPointer();
+//
+//    b1->refCount();
+//    a1->refCount();
 
-    b->refCount();
-    add1->refCount();
 
-#ifdef DEBUG
-    dbg(add1->refCount());
-    dbg(add2->refCount());
-#endif
-//    if(add1->refCount() == 1) delete add1; // 引用为0时释放资源
-//    if(add2->refCount() == 0) delete add2; // 程序结束前释放所有资源
+
+//    if(a1->refCount() == 1) delete a1; // 引用为0时释放资源
+//    if(a2->refCount() == 0) delete a2; // 程序结束前释放所有资源
     return 0;
 }

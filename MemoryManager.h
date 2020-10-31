@@ -3,13 +3,10 @@
 //
 
 #include <iostream>
-#include <list> // unused
+#include <mutex>
 #ifndef GARBAGE_COLLECTION_MEMORY_MANAGER_H
 #define GARBAGE_COLLECTION_MEMORY_MANAGER_H
-//#include "Object.h"
-#ifdef DEBUG
-#include "dbg.h"
-#endif
+
 
 /*
  * Memory Manage可以使用的内存
@@ -28,7 +25,7 @@
 typedef struct {
     void * list[MAX_OBJECT]; // 对象指针
     size_t listPreSize[MAX_OBJECT]; // 对象大小
-
+    bool mark[MAX_OBJECT];
     size_t listIndex; // 下标
 }MemoryStruct;
 
@@ -40,13 +37,15 @@ public:
     static void init();
     static MemoryManager* getInstance();
 
-    // TODO: static void toMark() {}
-    static void markClear() {
+    static void toMark(void *pointer); //即管理列表中的内存地址为空（手动delete）
+    static void markClear();
+    static void markCompress();
 
-    }
+
 
 //    static void getAllObjPointer();
 
+    // TODO: 重载析构函数，对new的资源进行释放
     ~MemoryManager() = default;
 private:
     static MemoryManager *memoryManager;
@@ -61,6 +60,10 @@ private:
 
 
     static MemoryStruct memoryStruct_;
+
+    /*
+     * M lock
+     */
 
 
 

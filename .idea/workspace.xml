@@ -29,7 +29,19 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="269b7bbb-3fdf-49ba-94c0-ca1953b3d650" name="Default Changelist" comment="" />
+    <list default="true" id="269b7bbb-3fdf-49ba-94c0-ca1953b3d650" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MemoryManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/MemoryManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MemoryManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/MemoryManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Object.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Object.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Object.h" beforeDir="false" afterPath="$PROJECT_DIR$/Object.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/GarbageCollection.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/GarbageCollection.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/type_pointer.c" beforeDir="false" afterPath="$PROJECT_DIR$/type_pointer.c" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,14 +72,15 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager">
-    <configuration name="GarbageCollection" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="GarbageCollection" TARGET_NAME="GarbageCollection" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="GarbageCollection" RUN_TARGET_NAME="GarbageCollection">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="GarbageCollection" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="GarbageCollection" TARGET_NAME="GarbageCollection" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="GarbageCollection" RUN_TARGET_NAME="GarbageCollection">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -90,6 +103,7 @@
       <workItem from="1603800410601" duration="3352000" />
       <workItem from="1604113084217" duration="11705000" />
       <workItem from="1604125503837" duration="712000" />
+      <workItem from="1604126367750" duration="13917000" />
     </task>
     <servers />
   </component>
@@ -108,74 +122,68 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
+  </component>
   <component name="WindowStateProjectService">
-    <state width="493" height="438" key="DebuggerActiveHint" timestamp="1604123193462">
+    <state width="493" height="438" key="DebuggerActiveHint" timestamp="1604136294190">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="493" height="438" key="DebuggerActiveHint/0.30.1536.834@0.30.1536.834" timestamp="1604123193462" />
+    <state width="493" height="438" key="DebuggerActiveHint/0.30.1536.834@0.30.1536.834" timestamp="1604136294190" />
     <state x="549" y="202" key="FileChooserDialogImpl" timestamp="1604114874769">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
     <state x="549" y="202" key="FileChooserDialogImpl/0.30.1536.834@0.30.1536.834" timestamp="1604114874769" />
-    <state width="1493" height="167" key="GridCell.Tab.0.bottom" timestamp="1604126223483">
+    <state width="723" height="239" key="GridCell.Tab.0.bottom" timestamp="1604139860857">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="1493" height="167" key="GridCell.Tab.0.bottom/0.30.1536.834@0.30.1536.834" timestamp="1604126223483" />
-    <state width="1493" height="167" key="GridCell.Tab.0.center" timestamp="1604126223483">
+    <state width="723" height="239" key="GridCell.Tab.0.bottom/0.30.1536.834@0.30.1536.834" timestamp="1604139860857" />
+    <state width="723" height="239" key="GridCell.Tab.0.center" timestamp="1604139860857">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="1493" height="167" key="GridCell.Tab.0.center/0.30.1536.834@0.30.1536.834" timestamp="1604126223483" />
-    <state width="1493" height="167" key="GridCell.Tab.0.left" timestamp="1604126223483">
+    <state width="723" height="239" key="GridCell.Tab.0.center/0.30.1536.834@0.30.1536.834" timestamp="1604139860857" />
+    <state width="723" height="239" key="GridCell.Tab.0.left" timestamp="1604139860857">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="1493" height="167" key="GridCell.Tab.0.left/0.30.1536.834@0.30.1536.834" timestamp="1604126223483" />
-    <state width="1493" height="167" key="GridCell.Tab.0.right" timestamp="1604126223483">
+    <state width="723" height="239" key="GridCell.Tab.0.left/0.30.1536.834@0.30.1536.834" timestamp="1604139860857" />
+    <state width="723" height="239" key="GridCell.Tab.0.right" timestamp="1604139860857">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="1493" height="167" key="GridCell.Tab.0.right/0.30.1536.834@0.30.1536.834" timestamp="1604126223483" />
-    <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1604123750101">
+    <state width="723" height="239" key="GridCell.Tab.0.right/0.30.1536.834@0.30.1536.834" timestamp="1604139860857" />
+    <state width="723" height="239" key="GridCell.Tab.1.bottom" timestamp="1604139860858">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="1493" height="277" key="GridCell.Tab.1.bottom/0.30.1536.834@0.30.1536.834" timestamp="1604123750101" />
-    <state width="1493" height="277" key="GridCell.Tab.1.center" timestamp="1604123750101">
+    <state width="723" height="239" key="GridCell.Tab.1.bottom/0.30.1536.834@0.30.1536.834" timestamp="1604139860858" />
+    <state width="723" height="239" key="GridCell.Tab.1.center" timestamp="1604139860857">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="1493" height="277" key="GridCell.Tab.1.center/0.30.1536.834@0.30.1536.834" timestamp="1604123750101" />
-    <state width="1493" height="277" key="GridCell.Tab.1.left" timestamp="1604123750101">
+    <state width="723" height="239" key="GridCell.Tab.1.center/0.30.1536.834@0.30.1536.834" timestamp="1604139860857" />
+    <state width="723" height="239" key="GridCell.Tab.1.left" timestamp="1604139860857">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="1493" height="277" key="GridCell.Tab.1.left/0.30.1536.834@0.30.1536.834" timestamp="1604123750101" />
-    <state width="1493" height="277" key="GridCell.Tab.1.right" timestamp="1604123750101">
+    <state width="723" height="239" key="GridCell.Tab.1.left/0.30.1536.834@0.30.1536.834" timestamp="1604139860857" />
+    <state width="723" height="239" key="GridCell.Tab.1.right" timestamp="1604139860857">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="1493" height="277" key="GridCell.Tab.1.right/0.30.1536.834@0.30.1536.834" timestamp="1604123750101" />
+    <state width="723" height="239" key="GridCell.Tab.1.right/0.30.1536.834@0.30.1536.834" timestamp="1604139860857" />
+    <state x="270" y="91" key="SettingsEditor" timestamp="1604126382184">
+      <screen x="0" y="30" width="1536" height="834" />
+    </state>
+    <state x="270" y="91" key="SettingsEditor/0.30.1536.834@0.30.1536.834" timestamp="1604126382184" />
     <state x="431" y="186" width="672" height="678" key="search.everywhere.popup" timestamp="1604124998629">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
     <state x="431" y="186" width="672" height="678" key="search.everywhere.popup/0.30.1536.834@0.30.1536.834" timestamp="1604124998629" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>39</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
-        <watch expression="list[0]" language="ObjectiveC" />
-        <watch expression="list[1]" language="ObjectiveC" />
-        <watch expression="list[2]" language="ObjectiveC" />
-        <watch expression="list[3]" language="ObjectiveC" />
-        <watch expression="list[4]" language="ObjectiveC" />
         <watch expression="Memory_" />
         <watch expression="memorySize_" />
-        <watch expression="memoryStruct_.list" />
-        <watch expression="memoryStruct_.listPreSize" />
-        <watch expression="memoryStruct_.listIndex" />
+        <watch expression="memoryStruct_" language="ObjectiveC" />
+        <watch expression="static_cast&lt;Object*&gt;(memoryStruct_.list[i])" />
       </configuration>
     </watches-manager>
   </component>

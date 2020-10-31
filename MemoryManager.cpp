@@ -18,7 +18,6 @@ size_t MemoryManager::lastPointer_ = 0;
 
 MemoryStruct MemoryManager::memoryStruct_;
 
-
 std::mutex M;
 /*
  * 重写全局operator new
@@ -55,6 +54,15 @@ void MemoryManager::init() {
         memoryStruct_.mark[i] = false;
     }
     memoryStruct_.listIndex = 0;
+
+    /*
+     * 初始化时开启内存整理线程
+     */
+#ifdef DEBUG
+    std::cout << "thread start\n";
+#endif
+    std::thread memoryTrim(MemoryManager::memoryTrim);
+    if(memoryTrim.joinable()) memoryTrim.join();
 }
 
 /*
@@ -62,8 +70,6 @@ void MemoryManager::init() {
  */
 void* MemoryManager::operator new(size_t size) // 重写operator new , Object &obj
 {
-
-
     // TODO 增加内存分配不足时的异常处理
     if(size > memorySize_ - lastPointer_) {
         std::cout << "Cannot Allocation\n"; // 应抛出异常
@@ -90,6 +96,18 @@ void* MemoryManager::operator new(size_t size) // 重写operator new , Object &o
     return objPointer;
 }
 
+/*
+ * 整理时主线程暂停
+ */
+void MemoryManager::memoryTrim() {
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+    markClear();
+    markCompress();
+}
+
+/*
+ * TODO: 自动Mark
+ */
 void MemoryManager::toMark(void *pointer) {
     for(std::size_t i = 0; i < MAX_OBJECT; ++i) {
         if(pointer == memoryStruct_.list[i]) {
@@ -129,14 +147,9 @@ MemoryManager* MemoryManager::getInstance() {
     return memoryManager;
 }
 
-
-
-
 /*
  * Mark - Clear
  * Mark - Compress
- * Mark 即管理列表中的内存地址为空（手动delete）
- * TODO: 下一个版本应该增加自动Mark的功能
  */
 void MemoryManager::markClear() {
 //    M.lock();
@@ -148,60 +161,91 @@ void MemoryManager::markClear() {
               */
              memoryStruct_.list[i] = nullptr;
              memoryStruct_.mark[i] = false;
-             memoryStruct_.listIndex -= 1;
-             lastPointer_ -= memoryStruct_.listPreSize[i];
-             memoryStruct_.listPreSize[i] = 0;
+
+             /*
+              * 每次释放资源后listIndex不减一，这个任务交给markCompress去做
+              */
+             // memoryStruct_.listIndex -= 1;
+             // lastPointer_ -= memoryStruct_.listPreSize[i];
+             // memoryStruct_.listPreSize[i] = 0;
          }
      }
 //     M.unlock();
-//     std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+
  }
 
 
 void MemoryManager::markCompress() {
-    // 追赶压缩
+    /*
+     * front nullptr index
+     * tail not nullptr index
+     */
+    size_t front = 0;
+    size_t tail = 0;
+    while(front < MAX_OBJECT && tail < MAX_OBJECT){
+        while(front < MAX_OBJECT) {
+            if(memoryStruct_.list[front] != nullptr) { ++ front; }
+            else break;
+        }
+        while(tail < MAX_OBJECT) {
+            if(memoryStruct_.list[tail] == nullptr) { ++ tail; }
+            else break;
+        }
+
+        /*
+         * 当整个内存剩余全为空或全满时结束
+         */
+        if(tail >= MAX_OBJECT && front >= MAX_OBJECT) { break; }
+
+        if(front < tail && front < MAX_OBJECT && tail < MAX_OBJECT) {
+            memoryStruct_.listIndex -= 1;
+            lastPointer_ -= memoryStruct_.listPreSize[tail];
+
+            swap(front, tail);
+
+            ++ front;
+            ++ tail;
+        } else {
+            ++ tail;
+        }
+    }
 }
 
+void MemoryManager::swap(size_t front, size_t tail) {
+    void* tempPointer;
+    size_t tempSize;
 
-// TODO: clearALL、move整理
-// TODO: 线程暂停，处理全部 使用一个临时链表来倒换 objectCount 内容有序弹出并判断是否被delete正在占用资源给temp链表，然后再从temp表给回objectCount
-// TODO: 寻找空闲地址，标记 size
-//void MemoryManager::getAllObjPointer() {
-//    // 逆序遍历
-//    // using listIterType = decltype(objectCount.rbegin());
-//    std::list<void *> objectListTemp;
-//
-//    for(auto iter = objectCount.rbegin(); iter != objectCount.rend(); ++ iter) {
-//        auto *objTemp = (Object*)*iter; // Object *
-//        int refCount = objTemp->refCount();
-//        std::cout << refCount << (objTemp->objectName()) << std::endl;
-//        if(0 == refCount) {
-//            std::cout << "Above has be deleted" << std::endl;
-//            delete objTemp;
-//            objTemp = nullptr;
-//        } else {
-//            objectListTemp.push_front(*iter);
-//        }
+    memoryStruct_.list[front] = memoryStruct_.list[tail];
+    memoryStruct_.list[tail] = nullptr;
+
+    memoryStruct_.listPreSize[front] = memoryStruct_.listPreSize[tail];
+    memoryStruct_.listPreSize[tail] = 0;
+}
+
+/*
+ * 单例模式中析构函数会成环
+ */
+//MemoryManager::~MemoryManager() {
+//    std::cout << "MemoryManager\n";
+//    if(Memory_) {
+//        ::operator delete(Memory_);
+//        Memory_ = nullptr;
 //    }
-//
-//    objectCount.clear();
-//
-//    std::cout << "---" << std::endl;
-//    for(auto &x : objectListTemp) {
-//        std::cout << ((Object*)x)->refCount() << std::endl;
-//        objectCount.push_back(x);
-//    }
-//
-//    objectListTemp.clear();
 //}
 
-//MemoryManager::MemoryManager{
-//
-//    std::cout << "MemoryManager< std::endl;
-//    if(memoryManager) {
-//        delete MemoryManager::memoryManager;
-//        MemoryManager::memoryManager = nullptr;
-//    }
-//}
+void MemoryManager::deleteInstance(){
+#ifdef DEBUG
+    std::cout << "~MemoryManager\n";
+#endif
+    if(Memory_) {
+        ::operator delete(Memory_);
+        Memory_ = nullptr;
+    }
+
+    if(memoryManager) {
+        ::operator delete(memoryManager);
+        memoryManager = nullptr;
+    }
+}
 
 

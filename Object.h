@@ -9,22 +9,17 @@
 
 class Object {
 public:
-    void* operator new(size_t size); // 重写operator new
+    void* operator new(size_t size);
     void operator delete(void *pointer) noexcept;
-    Object& operator=(Object &obj);
-    int refCount() const;
+
     void setObjectName(std::string str) {
         objectName_ = str;
     }
     std::string objectName() const;
     
-//    ~Object();
-private:
-//    static MemoryManager* memoryManager;
-    int refCount_ = 0;
-    std::string objectName_;
-protected:
 
+private:
+    std::string objectName_;
 };
 
-#endif //GARBAGECOLLECTION_OBJECT_H
+#endif // GARBAGE_COLLECTION_OBJECT_H

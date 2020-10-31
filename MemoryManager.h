@@ -37,16 +37,16 @@ public:
     static void init();
     static MemoryManager* getInstance();
 
+    static void memoryTrim();
     static void toMark(void *pointer); //即管理列表中的内存地址为空（手动delete）
     static void markClear();
     static void markCompress();
 
-
+    static void swap(size_t front, size_t tail);
 
 //    static void getAllObjPointer();
+    static void deleteInstance();
 
-    // TODO: 重载析构函数，对new的资源进行释放
-    ~MemoryManager() = default;
 private:
     static MemoryManager *memoryManager;
 
@@ -58,18 +58,9 @@ private:
      */
     static size_t lastPointer_;
 
-
     static MemoryStruct memoryStruct_;
 
-    /*
-     * M lock
-     */
 
-
-
-    //    static std::list<void *> objectCount; // 存储object对象，object对象内含有refCount_
 
 };
-
-
 #endif // GARBAGE_COLLECTION_MEMORY_MANAGER_H

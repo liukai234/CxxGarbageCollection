@@ -31,11 +31,7 @@
   <component name="ChangeListManager">
     <list default="true" id="269b7bbb-3fdf-49ba-94c0-ca1953b3d650" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MemoryManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/MemoryManager.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MemoryManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/MemoryManager.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Object.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Object.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Object.h" beforeDir="false" afterPath="$PROJECT_DIR$/Object.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/GarbageCollection.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/GarbageCollection.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
@@ -78,11 +74,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -103,11 +94,22 @@
       <workItem from="1604125503837" duration="712000" />
       <workItem from="1604126367750" duration="14192000" />
       <workItem from="1604143625512" duration="10566000" />
+      <workItem from="1604243932497" duration="3958000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -135,38 +137,38 @@
       <screen x="0" y="30" width="1536" height="834" />
     </state>
     <state x="549" y="202" key="FileChooserDialogImpl/0.30.1536.834@0.30.1536.834" timestamp="1604114874769" />
-    <state width="1493" height="307" key="GridCell.Tab.0.bottom" timestamp="1604156236570">
+    <state width="1493" height="194" key="GridCell.Tab.0.bottom" timestamp="1604247868887">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="1493" height="307" key="GridCell.Tab.0.bottom/0.30.1536.834@0.30.1536.834" timestamp="1604156236570" />
-    <state width="1493" height="307" key="GridCell.Tab.0.center" timestamp="1604156236570">
+    <state width="1493" height="194" key="GridCell.Tab.0.bottom/0.30.1536.834@0.30.1536.834" timestamp="1604247868887" />
+    <state width="1493" height="194" key="GridCell.Tab.0.center" timestamp="1604247868886">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="1493" height="307" key="GridCell.Tab.0.center/0.30.1536.834@0.30.1536.834" timestamp="1604156236570" />
-    <state width="1493" height="307" key="GridCell.Tab.0.left" timestamp="1604156236570">
+    <state width="1493" height="194" key="GridCell.Tab.0.center/0.30.1536.834@0.30.1536.834" timestamp="1604247868886" />
+    <state width="1493" height="194" key="GridCell.Tab.0.left" timestamp="1604247868886">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="1493" height="307" key="GridCell.Tab.0.left/0.30.1536.834@0.30.1536.834" timestamp="1604156236570" />
-    <state width="1493" height="307" key="GridCell.Tab.0.right" timestamp="1604156236570">
+    <state width="1493" height="194" key="GridCell.Tab.0.left/0.30.1536.834@0.30.1536.834" timestamp="1604247868886" />
+    <state width="1493" height="194" key="GridCell.Tab.0.right" timestamp="1604247868886">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="1493" height="307" key="GridCell.Tab.0.right/0.30.1536.834@0.30.1536.834" timestamp="1604156236570" />
-    <state width="1493" height="239" key="GridCell.Tab.1.bottom" timestamp="1604155699128">
+    <state width="1493" height="194" key="GridCell.Tab.0.right/0.30.1536.834@0.30.1536.834" timestamp="1604247868886" />
+    <state width="1493" height="266" key="GridCell.Tab.1.bottom" timestamp="1604246642429">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="1493" height="239" key="GridCell.Tab.1.bottom/0.30.1536.834@0.30.1536.834" timestamp="1604155699128" />
-    <state width="1493" height="239" key="GridCell.Tab.1.center" timestamp="1604155699128">
+    <state width="1493" height="266" key="GridCell.Tab.1.bottom/0.30.1536.834@0.30.1536.834" timestamp="1604246642429" />
+    <state width="1493" height="266" key="GridCell.Tab.1.center" timestamp="1604246642429">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="1493" height="239" key="GridCell.Tab.1.center/0.30.1536.834@0.30.1536.834" timestamp="1604155699128" />
-    <state width="1493" height="239" key="GridCell.Tab.1.left" timestamp="1604155699128">
+    <state width="1493" height="266" key="GridCell.Tab.1.center/0.30.1536.834@0.30.1536.834" timestamp="1604246642429" />
+    <state width="1493" height="266" key="GridCell.Tab.1.left" timestamp="1604246642429">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="1493" height="239" key="GridCell.Tab.1.left/0.30.1536.834@0.30.1536.834" timestamp="1604155699128" />
-    <state width="1493" height="239" key="GridCell.Tab.1.right" timestamp="1604155699128">
+    <state width="1493" height="266" key="GridCell.Tab.1.left/0.30.1536.834@0.30.1536.834" timestamp="1604246642429" />
+    <state width="1493" height="266" key="GridCell.Tab.1.right" timestamp="1604246642429">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="1493" height="239" key="GridCell.Tab.1.right/0.30.1536.834@0.30.1536.834" timestamp="1604155699128" />
+    <state width="1493" height="266" key="GridCell.Tab.1.right/0.30.1536.834@0.30.1536.834" timestamp="1604246642429" />
     <state x="270" y="91" key="SettingsEditor" timestamp="1604126382184">
       <screen x="0" y="30" width="1536" height="834" />
     </state>

@@ -35,10 +35,19 @@ void testDriver() {
 
     A *a2 = new A(2, "a2");
     B *b1 = new B(5, "b1");
-    B *b2 = new B(2, "b2");
+    B *b2; // = new B(2, "b2");
 
     delete(b1);
+
+    /*
+     * 在b2 = b1时就算b1被clear或Compress也只是丢失了list表中的指针，b1的数据已经被b2指向
+     * 所以b1置空后并不影响b2
+     */
+    b2 = b1;
     b1 = nullptr;
+#ifdef DEBUG
+    std::cout << "b2->objectName(): " << b2->objectName() << std::endl;
+#endif
 }
 
 int main() {

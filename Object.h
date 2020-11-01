@@ -16,8 +16,6 @@ public:
         objectName_ = str;
     }
     std::string objectName() const;
-    
-
 private:
     std::string objectName_;
 };

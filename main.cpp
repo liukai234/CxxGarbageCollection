@@ -37,6 +37,9 @@ void testDriver() {
     B *b1 = new B(5, "b1");
     B *b2; // = new B(2, "b2");
 
+    /*
+     * 应在delete前使用b2 = b1
+     */
     delete(b1);
 
     /*

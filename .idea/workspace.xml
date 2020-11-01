@@ -30,9 +30,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="269b7bbb-3fdf-49ba-94c0-ca1953b3d650" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Object.h" beforeDir="false" afterPath="$PROJECT_DIR$/Object.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/GarbageCollection.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/GarbageCollection.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +91,7 @@
       <workItem from="1604125503837" duration="712000" />
       <workItem from="1604126367750" duration="14192000" />
       <workItem from="1604143625512" duration="10566000" />
-      <workItem from="1604243932497" duration="3958000" />
+      <workItem from="1604243932497" duration="4684000" />
     </task>
     <servers />
   </component>

@@ -16,9 +16,11 @@ void * MemoryManager::Memory_;
 size_t MemoryManager::memorySize_;
 size_t MemoryManager::lastPointer_ = 0;
 
+int MemoryManager::THREAD_KILL = 0;
+std::thread* MemoryManager::memoryTrimThread = nullptr;
+
 MemoryStruct MemoryManager::memoryStruct_;
 
-std::mutex M;
 /*
  * 重写全局operator new
  */
@@ -58,11 +60,11 @@ void MemoryManager::init() {
     /*
      * 初始化时开启内存整理线程
      */
+    memoryTrimThread = new std::thread(memoryTrim);
 #ifdef DEBUG
     std::cout << "thread start\n";
 #endif
-//    std::thread memoryTrim(MemoryManager::memoryTrim);
-//    if(memoryTrim.joinable()) memoryTrim.join();
+
 }
 
 /*
@@ -70,6 +72,7 @@ void MemoryManager::init() {
  */
 void* MemoryManager::operator new(size_t size) // 重写operator new , Object &obj
 {
+
     /*
      * 内存不足时异常处理
      */
@@ -81,47 +84,19 @@ void* MemoryManager::operator new(size_t size) // 重写operator new , Object &o
      * Memory_起始地址 + 偏移量
      */
     void * objPointer = (byte_pointer)Memory_ + lastPointer_;
-#ifdef DEBUG
+#ifdef POINTER_DEBUG
     std::cout << "MemoryManager operator new called, new: ";
     show_pointer(objPointer);
 #endif
     lastPointer_ += size;
 
-//    M.lock();
     memoryStruct_.list[memoryStruct_.listIndex] = (byte_pointer)objPointer;
 
     // TODO: 内存越界检查
     memoryStruct_.listPreSize[memoryStruct_.listIndex] = size;
     memoryStruct_.listIndex += 1;
-//    M.unlock();
-//    objectCount.push_back(objPointer);
+
     return objPointer;
-}
-
-/*
- * 整理时主线程暂停
- */
-void MemoryManager::memoryTrim() {
-#ifdef DEBUG
-    std::cout << "thread pause by memoryTrim()\n";
-#endif
-    // TODO: 多线程处理，这里线程只执行一次
-//    std::this_thread::sleep_for(std::chrono::milliseconds(500));
-//    if()
-    markClear();
-    markCompress();
-//    memoryTrim();
-}
-
-/*
- * TODO: 自动Mark
- */
-void MemoryManager::toMark(void *pointer) {
-    for(std::size_t i = 0; i < MAX_OBJECT; ++i) {
-        if(pointer == memoryStruct_.list[i]) {
-            memoryStruct_.mark[i] = true;
-        }
-    }
 }
 
 /*
@@ -129,7 +104,7 @@ void MemoryManager::toMark(void *pointer) {
  * toMark() 标记
  */
 void MemoryManager::operator delete(void *pointer) noexcept {
-#ifdef DEBUG
+#ifdef POINTER_DEBUG
     std::cout << "MemoryManager operator delete called, delete: ";
     show_pointer(pointer);
 
@@ -156,13 +131,40 @@ MemoryManager* MemoryManager::getInstance() {
 }
 
 /*
+ * TODO: 整理时主线程暂停
+ */
+void MemoryManager::memoryTrim() {
+    while(true) {
+#ifdef DEBUG
+        //        std::cout << "thread pause by memoryTrim()\n";
+#endif
+        // TODO: lock 设置为互斥资源
+        markClear();
+        markCompress();
+
+        std::this_thread::sleep_for(std::chrono::microseconds(3));
+        if(THREAD_KILL) break;
+    }
+}
+
+/*
+ * TODO: 自动Mark
+ */
+void MemoryManager::toMark(void *pointer) {
+    for(std::size_t i = 0; i < MAX_OBJECT; ++i) {
+        if(pointer == memoryStruct_.list[i]) {
+            memoryStruct_.mark[i] = true;
+        }
+    }
+}
+
+/*
  * Mark - Clear
  * Mark - Compress
  */
 void MemoryManager::markClear() {
-//    M.lock();
-     for(std::size_t i = 0; i < MAX_OBJECT; ++i) {
-         if(memoryStruct_.mark[i]) {
+    for(std::size_t i = 0; i < MAX_OBJECT; ++i) {
+        if(memoryStruct_.mark[i]) {
              /*
               * ::operator delete(memoryStruct_.list[i]);
               * 这里无需调用全局delete, 因为这块内存是Memory_所拥有的, free时释放了Memory_的内存
@@ -176,11 +178,9 @@ void MemoryManager::markClear() {
              // memoryStruct_.listIndex -= 1;
              // lastPointer_ -= memoryStruct_.listPreSize[i];
              // memoryStruct_.listPreSize[i] = 0;
-         }
-     }
-//     M.unlock();
-
- }
+        }
+    }
+}
 
 
 void MemoryManager::markCompress() {
@@ -220,9 +220,6 @@ void MemoryManager::markCompress() {
 }
 
 void MemoryManager::swap(size_t front, size_t tail) {
-    void* tempPointer;
-    size_t tempSize;
-
     memoryStruct_.list[front] = memoryStruct_.list[tail];
     memoryStruct_.list[tail] = nullptr;
 
@@ -254,6 +251,12 @@ void MemoryManager::deleteInstance(){
         ::operator delete(memoryManager);
         memoryManager = nullptr;
     }
+
+    /*
+     * 将memoryTrim的循环结束
+     */
+    THREAD_KILL = 1;
+    memoryTrimThread->join();
 }
 
 

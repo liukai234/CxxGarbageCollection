@@ -7,7 +7,7 @@
  * 内存不足时异常处理
  */
 #include "MemoryBadAlloc.h"
-#include <mutex>
+#include <thread>
 #ifndef GARBAGE_COLLECTION_MEMORY_MANAGER_H
 #define GARBAGE_COLLECTION_MEMORY_MANAGER_H
 
@@ -21,6 +21,7 @@
  * 内存中存有的最大对象数量
  */
 #define MAX_OBJECT 256
+
 
 /*
  * 匿名结构体MemoryStruct
@@ -64,6 +65,8 @@ private:
 
     static MemoryStruct memoryStruct_;
 
+    static std::thread *memoryTrimThread;
+    static int THREAD_KILL;
 
 
 };

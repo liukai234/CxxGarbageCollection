@@ -30,6 +30,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="269b7bbb-3fdf-49ba-94c0-ca1953b3d650" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/MemoryBadAlloc.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MemoryBadAlloc.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MemoryManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/MemoryManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MemoryManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/MemoryManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/GarbageCollection.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/GarbageCollection.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/GarbageCollection.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/GarbageCollection.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +60,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1jSaioNdHfapg7LqT6Bvm49yx8a" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -61,7 +71,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cxx_course_record/Thread/CMakeLists.txt" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
@@ -91,7 +101,9 @@
       <workItem from="1604125503837" duration="712000" />
       <workItem from="1604126367750" duration="14192000" />
       <workItem from="1604143625512" duration="10566000" />
-      <workItem from="1604243932497" duration="4684000" />
+      <workItem from="1604243932497" duration="10555000" />
+      <workItem from="1604282680233" duration="3212000" />
+      <workItem from="1604401299514" duration="1178000" />
     </task>
     <servers />
   </component>
@@ -126,46 +138,46 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state width="493" height="438" key="DebuggerActiveHint" timestamp="1604136294190">
+    <state width="493" height="438" key="DebuggerActiveHint" timestamp="1604283405094">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="493" height="438" key="DebuggerActiveHint/0.30.1536.834@0.30.1536.834" timestamp="1604136294190" />
-    <state x="549" y="202" key="FileChooserDialogImpl" timestamp="1604114874769">
+    <state width="493" height="438" key="DebuggerActiveHint/0.30.1536.834@0.30.1536.834" timestamp="1604283405094" />
+    <state x="549" y="202" key="FileChooserDialogImpl" timestamp="1604285358472">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state x="549" y="202" key="FileChooserDialogImpl/0.30.1536.834@0.30.1536.834" timestamp="1604114874769" />
-    <state width="1493" height="194" key="GridCell.Tab.0.bottom" timestamp="1604247868887">
+    <state x="549" y="202" key="FileChooserDialogImpl/0.30.1536.834@0.30.1536.834" timestamp="1604285358472" />
+    <state width="1493" height="361" key="GridCell.Tab.0.bottom" timestamp="1604287431953">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="1493" height="194" key="GridCell.Tab.0.bottom/0.30.1536.834@0.30.1536.834" timestamp="1604247868887" />
-    <state width="1493" height="194" key="GridCell.Tab.0.center" timestamp="1604247868886">
+    <state width="1493" height="361" key="GridCell.Tab.0.bottom/0.30.1536.834@0.30.1536.834" timestamp="1604287431953" />
+    <state width="1493" height="361" key="GridCell.Tab.0.center" timestamp="1604287431953">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="1493" height="194" key="GridCell.Tab.0.center/0.30.1536.834@0.30.1536.834" timestamp="1604247868886" />
-    <state width="1493" height="194" key="GridCell.Tab.0.left" timestamp="1604247868886">
+    <state width="1493" height="361" key="GridCell.Tab.0.center/0.30.1536.834@0.30.1536.834" timestamp="1604287431953" />
+    <state width="1493" height="361" key="GridCell.Tab.0.left" timestamp="1604287431953">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="1493" height="194" key="GridCell.Tab.0.left/0.30.1536.834@0.30.1536.834" timestamp="1604247868886" />
-    <state width="1493" height="194" key="GridCell.Tab.0.right" timestamp="1604247868886">
+    <state width="1493" height="361" key="GridCell.Tab.0.left/0.30.1536.834@0.30.1536.834" timestamp="1604287431953" />
+    <state width="1493" height="361" key="GridCell.Tab.0.right" timestamp="1604287431953">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="1493" height="194" key="GridCell.Tab.0.right/0.30.1536.834@0.30.1536.834" timestamp="1604247868886" />
-    <state width="1493" height="266" key="GridCell.Tab.1.bottom" timestamp="1604246642429">
+    <state width="1493" height="361" key="GridCell.Tab.0.right/0.30.1536.834@0.30.1536.834" timestamp="1604287431953" />
+    <state width="1493" height="361" key="GridCell.Tab.1.bottom" timestamp="1604287431953">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="1493" height="266" key="GridCell.Tab.1.bottom/0.30.1536.834@0.30.1536.834" timestamp="1604246642429" />
-    <state width="1493" height="266" key="GridCell.Tab.1.center" timestamp="1604246642429">
+    <state width="1493" height="361" key="GridCell.Tab.1.bottom/0.30.1536.834@0.30.1536.834" timestamp="1604287431953" />
+    <state width="1493" height="361" key="GridCell.Tab.1.center" timestamp="1604287431953">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="1493" height="266" key="GridCell.Tab.1.center/0.30.1536.834@0.30.1536.834" timestamp="1604246642429" />
-    <state width="1493" height="266" key="GridCell.Tab.1.left" timestamp="1604246642429">
+    <state width="1493" height="361" key="GridCell.Tab.1.center/0.30.1536.834@0.30.1536.834" timestamp="1604287431953" />
+    <state width="1493" height="361" key="GridCell.Tab.1.left" timestamp="1604287431953">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="1493" height="266" key="GridCell.Tab.1.left/0.30.1536.834@0.30.1536.834" timestamp="1604246642429" />
-    <state width="1493" height="266" key="GridCell.Tab.1.right" timestamp="1604246642429">
+    <state width="1493" height="361" key="GridCell.Tab.1.left/0.30.1536.834@0.30.1536.834" timestamp="1604287431953" />
+    <state width="1493" height="361" key="GridCell.Tab.1.right" timestamp="1604287431953">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="1493" height="266" key="GridCell.Tab.1.right/0.30.1536.834@0.30.1536.834" timestamp="1604246642429" />
+    <state width="1493" height="361" key="GridCell.Tab.1.right/0.30.1536.834@0.30.1536.834" timestamp="1604287431953" />
     <state x="270" y="91" key="SettingsEditor" timestamp="1604126382184">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
@@ -176,6 +188,15 @@
     <state x="431" y="186" width="672" height="678" key="search.everywhere.popup/0.30.1536.834@0.30.1536.834" timestamp="1604124998629" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>60</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
         <watch expression="Memory_" />

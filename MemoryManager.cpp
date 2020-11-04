@@ -61,8 +61,8 @@ void MemoryManager::init() {
 #ifdef DEBUG
     std::cout << "thread start\n";
 #endif
-    std::thread memoryTrim(MemoryManager::memoryTrim);
-    if(memoryTrim.joinable()) memoryTrim.join();
+//    std::thread memoryTrim(MemoryManager::memoryTrim);
+//    if(memoryTrim.joinable()) memoryTrim.join();
 }
 
 /*
@@ -70,9 +70,11 @@ void MemoryManager::init() {
  */
 void* MemoryManager::operator new(size_t size) // 重写operator new , Object &obj
 {
-    // TODO 增加内存分配不足时的异常处理
+    /*
+     * 内存不足时异常处理
+     */
     if(size > memorySize_ - lastPointer_) {
-        std::cout << "Cannot Allocation\n"; // 应抛出异常
+        throw MemoryBadAlloc();
     }
 
     /*
@@ -100,9 +102,15 @@ void* MemoryManager::operator new(size_t size) // 重写operator new , Object &o
  * 整理时主线程暂停
  */
 void MemoryManager::memoryTrim() {
-    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+#ifdef DEBUG
+    std::cout << "thread pause by memoryTrim()\n";
+#endif
+    // TODO: 多线程处理，这里线程只执行一次
+//    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+//    if()
     markClear();
     markCompress();
+//    memoryTrim();
 }
 
 /*

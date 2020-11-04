@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/source/CLionProjects/CxxGarbageCollection/MemoryBadAlloc.cpp">
+			<Option target="GarbageCollection"/>
+		</Unit>
+		<Unit filename="D:/source/CLionProjects/CxxGarbageCollection/MemoryBadAlloc.h">
+			<Option target="GarbageCollection"/>
+		</Unit>
 		<Unit filename="D:/source/CLionProjects/CxxGarbageCollection/MemoryManager.cpp">
 			<Option target="GarbageCollection"/>
 		</Unit>

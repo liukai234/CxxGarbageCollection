@@ -3,6 +3,10 @@
 //
 
 #include <iostream>
+/*
+ * 内存不足时异常处理
+ */
+#include "MemoryBadAlloc.h"
 #include <mutex>
 #ifndef GARBAGE_COLLECTION_MEMORY_MANAGER_H
 #define GARBAGE_COLLECTION_MEMORY_MANAGER_H

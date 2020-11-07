@@ -23,6 +23,7 @@
 #define MAX_OBJECT 256
 
 
+
 /*
  * 匿名结构体MemoryStruct
  * 维护对象大小及指针列表
@@ -68,6 +69,10 @@ private:
     static std::thread *memoryTrimThread;
     static int THREAD_KILL;
 
+    /*
+     * 锁: 将对memoryStruct_和lastPointer_、Memory_的操作视为一个原子操作
+     */
+    static int LOCK_;
 
 };
 #endif // GARBAGE_COLLECTION_MEMORY_MANAGER_H

@@ -3,6 +3,7 @@
 //
 
 #include <thread>
+#include <synchapi.h>
 #include "MemoryManager.h"
 
 /*
@@ -19,7 +20,10 @@ size_t MemoryManager::lastPointer_ = 0;
 int MemoryManager::THREAD_KILL = 0;
 std::thread* MemoryManager::memoryTrimThread = nullptr;
 
+int MemoryManager::LOCK_ = 0;
+
 MemoryStruct MemoryManager::memoryStruct_;
+
 
 /*
  * 重写全局operator new
@@ -72,31 +76,35 @@ void MemoryManager::init() {
  */
 void* MemoryManager::operator new(size_t size) // 重写operator new , Object &obj
 {
+    while(true) {
+        if(!LOCK_) {
+            LOCK_ = 1;
+            /*
+             * 内存不足时异常处理
+             */
+            if (size > memorySize_ - lastPointer_) {
+                throw MemoryBadAlloc();
+            }
 
-    /*
-     * 内存不足时异常处理
-     */
-    if(size > memorySize_ - lastPointer_) {
-        throw MemoryBadAlloc();
-    }
-
-    /*
-     * Memory_起始地址 + 偏移量
-     */
-    void * objPointer = (byte_pointer)Memory_ + lastPointer_;
+            /*
+             * Memory_起始地址 + 偏移量
+             */
+            void *objPointer = (byte_pointer) Memory_ + lastPointer_;
 #ifdef POINTER_DEBUG
-    std::cout << "MemoryManager operator new called, new: ";
-    show_pointer(objPointer);
+            std::cout << "MemoryManager operator new called, new: ";
+            show_pointer(objPointer);
 #endif
-    lastPointer_ += size;
+            lastPointer_ += size;
 
-    memoryStruct_.list[memoryStruct_.listIndex] = (byte_pointer)objPointer;
+            memoryStruct_.list[memoryStruct_.listIndex] = (byte_pointer) objPointer;
 
-    // TODO: 内存越界检查
-    memoryStruct_.listPreSize[memoryStruct_.listIndex] = size;
-    memoryStruct_.listIndex += 1;
-
-    return objPointer;
+            // TODO: 内存越界检查
+            memoryStruct_.listPreSize[memoryStruct_.listIndex] = size;
+            memoryStruct_.listIndex += 1;
+            LOCK_ = 0;
+            return objPointer;
+        }
+    }
 }
 
 /*
@@ -131,24 +139,34 @@ MemoryManager* MemoryManager::getInstance() {
 }
 
 /*
- * TODO: 整理时主线程暂停
+ * 整理时让new的自旋锁自旋
  */
 void MemoryManager::memoryTrim() {
     while(true) {
 #ifdef DEBUG
         //        std::cout << "thread pause by memoryTrim()\n";
 #endif
-        // TODO: lock 设置为互斥资源
-        markClear();
-        markCompress();
+        // 为互斥资源上锁
+        if(!LOCK_) {
+            LOCK_ = 1;
+            markClear();
+            markCompress();
 
-        std::this_thread::sleep_for(std::chrono::microseconds(3));
+            /*
+             * Sleep(300)不应该存在，目的在于演示LOCK_让new中的自旋锁自旋
+             */
+            Sleep(300);
+
+            LOCK_ = 0;
+        }
+
+        std::this_thread::sleep_for(std::chrono::microseconds(300));
         if(THREAD_KILL) break;
     }
 }
 
 /*
- * TODO: 自动Mark
+ * 增加标记
  */
 void MemoryManager::toMark(void *pointer) {
     for(std::size_t i = 0; i < MAX_OBJECT; ++i) {

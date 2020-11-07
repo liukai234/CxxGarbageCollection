@@ -34,14 +34,11 @@ void testDriver() {
      * 当捕获到某一块内存分配失败时，终止进程，释放全部内存
      */
     try{
-//        std::cout << "main: " << std::this_thread::get_id() << std::endl;
         A *a1 = new A(5, "a1");
 
         delete(a1);
         a1 = nullptr;
-        Sleep(3000);
 
-        // TODO:[bug] a2 and a3 have same address[PROBLEM lock]
         A *a2 = new A(2, "a2");
         A *a3 = new A(2, "a3");
         A *a4 = new A(2, "a4");
@@ -54,8 +51,6 @@ void testDriver() {
         a2 = nullptr;
         a3 = nullptr;
         a5 = nullptr;
-
-        Sleep(3000);
 
         // If don't delete Cannot be Allocated # 256/48 = 5
         B *b1 = new B(5, "b1");
@@ -89,12 +84,11 @@ void testDriver() {
 }
 
 int main() {
-
-
     testDriver();
     /*
      * 释放单例
      */
+
     MemoryManager::deleteInstance();
     return 0;
 }

@@ -149,13 +149,15 @@ void MemoryManager::memoryTrim() {
         // 为互斥资源上锁
         if(!LOCK_) {
             LOCK_ = 1;
+#ifdef POINTER_DEBUG
+            // std::cout << "memoryTrimThread LOCK_\n";
+#endif
             markClear();
             markCompress();
 
             /*
              * Sleep(300)不应该存在，目的在于演示LOCK_让new中的自旋锁自旋
              */
-            Sleep(300);
 
             LOCK_ = 0;
         }

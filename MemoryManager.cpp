@@ -173,11 +173,11 @@ void MemoryManager::markClear() {
              memoryStruct_.mark[i] = false;
 
              /*
-              * 每次释放资源后listIndex不减一，这个任务交给markCompress去做
+              * 每次释放资源后listIndex减一
               */
-             // memoryStruct_.listIndex -= 1;
-             // lastPointer_ -= memoryStruct_.listPreSize[i];
-             // memoryStruct_.listPreSize[i] = 0;
+              memoryStruct_.listIndex -= 1;
+              lastPointer_ -= memoryStruct_.listPreSize[i];
+              memoryStruct_.listPreSize[i] = 0;
         }
     }
 }
@@ -206,8 +206,8 @@ void MemoryManager::markCompress() {
         if(tail >= MAX_OBJECT && front >= MAX_OBJECT) { break; }
 
         if(front < tail && front < MAX_OBJECT && tail < MAX_OBJECT) {
-            memoryStruct_.listIndex -= 1;
-            lastPointer_ -= memoryStruct_.listPreSize[tail];
+//            memoryStruct_.listIndex -= 1;
+//            lastPointer_ -= memoryStruct_.listPreSize[tail];
 
             swap(front, tail);
 

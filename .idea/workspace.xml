@@ -31,7 +31,7 @@
   <component name="ChangeListManager">
     <list default="true" id="269b7bbb-3fdf-49ba-94c0-ca1953b3d650" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MemoryManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/MemoryManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/GarbageCollection.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/GarbageCollection.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/GarbageCollection.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/GarbageCollection.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,6 +53,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/liukai234/CxxGarbageCollection" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="1jSaioNdHfapg7LqT6Bvm49yx8a" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -65,17 +72,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cxx_course_record/Thread/CMakeLists.txt" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="GarbageCollection" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="GarbageCollection" TARGET_NAME="GarbageCollection" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="GarbageCollection" RUN_TARGET_NAME="GarbageCollection">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GarbageCollection" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="GarbageCollection" TARGET_NAME="GarbageCollection" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="GarbageCollection" RUN_TARGET_NAME="GarbageCollection">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -106,6 +113,24 @@
       <workItem from="1604464951088" duration="6799000" />
       <workItem from="1604578660842" duration="909000" />
       <workItem from="1604715949960" duration="7276000" />
+      <workItem from="1606714898774" duration="154000" />
+      <workItem from="1606715488429" duration="8000" />
+      <workItem from="1606716862784" duration="78000" />
+      <workItem from="1606898225371" duration="96000" />
+      <workItem from="1606982876479" duration="120000" />
+      <workItem from="1607852746424" duration="2421000" />
+      <workItem from="1609301908542" duration="243000" />
+      <workItem from="1609302163449" duration="70000" />
+      <workItem from="1610780948173" duration="191000" />
+      <workItem from="1610781147546" duration="49000" />
+      <workItem from="1612355269042" duration="207000" />
+      <workItem from="1616301317545" duration="4267000" />
+      <workItem from="1617786019817" duration="908000" />
+      <workItem from="1617787433764" duration="3426000" />
+      <workItem from="1617795487703" duration="1553000" />
+      <workItem from="1617956596936" duration="1483000" />
+      <workItem from="1617976736577" duration="18000" />
+      <workItem from="1631749559807" duration="172000" />
     </task>
     <servers />
   </component>
@@ -140,54 +165,10 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state width="493" height="438" key="DebuggerActiveHint" timestamp="1604283405094">
+    <state x="452" y="125" key="SettingsEditor" timestamp="1631749732066">
       <screen x="0" y="30" width="1536" height="834" />
     </state>
-    <state width="493" height="438" key="DebuggerActiveHint/0.30.1536.834@0.30.1536.834" timestamp="1604283405094" />
-    <state x="549" y="202" key="FileChooserDialogImpl" timestamp="1604285358472">
-      <screen x="0" y="30" width="1536" height="834" />
-    </state>
-    <state x="549" y="202" key="FileChooserDialogImpl/0.30.1536.834@0.30.1536.834" timestamp="1604285358472" />
-    <state width="1493" height="309" key="GridCell.Tab.0.bottom" timestamp="1604723170000">
-      <screen x="0" y="30" width="1536" height="834" />
-    </state>
-    <state width="1493" height="309" key="GridCell.Tab.0.bottom/0.30.1536.834@0.30.1536.834" timestamp="1604723170000" />
-    <state width="1493" height="309" key="GridCell.Tab.0.center" timestamp="1604723170000">
-      <screen x="0" y="30" width="1536" height="834" />
-    </state>
-    <state width="1493" height="309" key="GridCell.Tab.0.center/0.30.1536.834@0.30.1536.834" timestamp="1604723170000" />
-    <state width="1493" height="309" key="GridCell.Tab.0.left" timestamp="1604723170000">
-      <screen x="0" y="30" width="1536" height="834" />
-    </state>
-    <state width="1493" height="309" key="GridCell.Tab.0.left/0.30.1536.834@0.30.1536.834" timestamp="1604723170000" />
-    <state width="1493" height="309" key="GridCell.Tab.0.right" timestamp="1604723170000">
-      <screen x="0" y="30" width="1536" height="834" />
-    </state>
-    <state width="1493" height="309" key="GridCell.Tab.0.right/0.30.1536.834@0.30.1536.834" timestamp="1604723170000" />
-    <state width="1493" height="225" key="GridCell.Tab.1.bottom" timestamp="1604721552171">
-      <screen x="0" y="30" width="1536" height="834" />
-    </state>
-    <state width="1493" height="225" key="GridCell.Tab.1.bottom/0.30.1536.834@0.30.1536.834" timestamp="1604721552171" />
-    <state width="1493" height="225" key="GridCell.Tab.1.center" timestamp="1604721552171">
-      <screen x="0" y="30" width="1536" height="834" />
-    </state>
-    <state width="1493" height="225" key="GridCell.Tab.1.center/0.30.1536.834@0.30.1536.834" timestamp="1604721552171" />
-    <state width="1493" height="225" key="GridCell.Tab.1.left" timestamp="1604721552171">
-      <screen x="0" y="30" width="1536" height="834" />
-    </state>
-    <state width="1493" height="225" key="GridCell.Tab.1.left/0.30.1536.834@0.30.1536.834" timestamp="1604721552171" />
-    <state width="1493" height="225" key="GridCell.Tab.1.right" timestamp="1604721552171">
-      <screen x="0" y="30" width="1536" height="834" />
-    </state>
-    <state width="1493" height="225" key="GridCell.Tab.1.right/0.30.1536.834@0.30.1536.834" timestamp="1604721552171" />
-    <state x="270" y="91" key="SettingsEditor" timestamp="1604126382184">
-      <screen x="0" y="30" width="1536" height="834" />
-    </state>
-    <state x="270" y="91" key="SettingsEditor/0.30.1536.834@0.30.1536.834" timestamp="1604126382184" />
-    <state x="431" y="186" width="672" height="678" key="search.everywhere.popup" timestamp="1604124998629">
-      <screen x="0" y="30" width="1536" height="834" />
-    </state>
-    <state x="431" y="186" width="672" height="678" key="search.everywhere.popup/0.30.1536.834@0.30.1536.834" timestamp="1604124998629" />
+    <state x="452" y="125" key="SettingsEditor/0.30.1536.834@0.30.1536.834" timestamp="1631749732066" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

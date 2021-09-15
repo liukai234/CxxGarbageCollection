@@ -16,6 +16,7 @@ public:
         objectName_ = str;
     }
     std::string objectName() const;
+    virtual ~Object() = default;
 private:
     std::string objectName_;
 };
